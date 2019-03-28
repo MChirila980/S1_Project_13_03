@@ -7,8 +7,8 @@
 
    Crossword Puzzle Script
    
-   Author: 
-   Date:   
+   Author: Melinda Chirila
+   Date:   3/28/2019
    
    Global Variables
    ================
