@@ -73,7 +73,33 @@ function init() {
             });
       }
 }
+//selecting letter
+document.addEventListener("keydown", selectLetter);
+var typeImage = document.getElementById("directionImg");
+typeImage.style.cursor = "pointer";
+typeImage.addEventListener("click", switchTypeDirection);
+document.getElementById("showErrors").onclick = function () {
+      for (var i = 0; i < allLetters.length; i++) {
+            if (allLetters[i].textContent != allLetters[i].dataset.letter) {
+                  allLetters[i].style.color = "red";
+            }
+      }
+}
+      setTimeout(
+            function () {
+                  for (var i = 0; i < allLetters.length; i++) {
+                        allLetters[i].style.color = "";
+                  }
+            }, 3000
+      );
 
+document.getElementById("showSolution").onclick = function () {
+      for (var i = 0; i < allLetters.length; i++) {
+            if (allLetters[i].textContent != allLetters[i].dataset.letter) {
+                  allLetters[i].textContent = allLetters[i].dataset.letter;
+            }
+      }
+}
 /*====================================================*/
 
 function getChar(keyNum) {
