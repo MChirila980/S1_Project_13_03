@@ -48,16 +48,31 @@
 
 
 */
+var allLetters;
+var currentLetter;
+var wordLetters;
+var acrossClue;
+var downClue;
+var typeDirection = "right";
 
-
-
-
-
-   
-
-
-
-
+window.onload = init;
+//he table crossword letters
+function init() {
+      allLetters = document.querySelectorAll("table#crossword span")
+      currentLetter = allLetters[0];
+      var acrossID = currentLetter.getAttribute("data-clue-a");
+      var downID = currentLetter.getAttribute("data-clue-d");
+      acrossClue = document.getElementById(acrossID)
+      downClue = document.getElementById(downID);
+      console.log(acrossClue)
+      formatPuzzle(currentLetter);
+      for (var i = 0; i < allLetters.length; i++) {
+            allLetters[i].style.cursor = "pointer";
+            allLetters[i].addEventListener("onmousedown", function (event) {
+                  formatPuzzle(event.target);
+            });
+      }
+}
 
 /*====================================================*/
 
