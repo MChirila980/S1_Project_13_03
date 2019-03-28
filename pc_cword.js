@@ -85,13 +85,13 @@ document.getElementById("showErrors").onclick = function () {
             }
       }
 }
-      setTimeout(
-            function () {
-                  for (var i = 0; i < allLetters.length; i++) {
-                        allLetters[i].style.color = "";
-                  }
-            }, 3000
-      );
+setTimeout(
+      function () {
+            for (var i = 0; i < allLetters.length; i++) {
+                  allLetters[i].style.color = "";
+            }
+      }, 3000
+);
 
 document.getElementById("showSolution").onclick = function () {
       for (var i = 0; i < allLetters.length; i++) {
@@ -129,9 +129,9 @@ function formatPuzzle(puzzleLetter) {
       } else {
             currentLetter.style.backgroundColor = "rgb(255, 191, 191)";
       }
-      }
-      
-      function selectLetter(event) {
+}
+
+function selectLetter(event) {
       var leftLetter = document.getElementById(currentLetter.dataset.left);
       var upLetter = document.getElementById(currentLetter.dataset.up);
       var rightLetter = document.getElementById(currentLetter.dataset.right)
@@ -158,9 +158,9 @@ function formatPuzzle(puzzleLetter) {
             }
       }
       event.preventDefault();
-      }
-      //you can switch the direction that you type in.
-      function switchTypeDirection() {
+}
+//you can switch the direction that you type in.
+function switchTypeDirection() {
       var typeImage = document.getElementById("directionImg");
       if (typeDirection === "right") {
             typeDirection = "down";
@@ -171,12 +171,12 @@ function formatPuzzle(puzzleLetter) {
             typeImage.src = "pc_down.png";
             currentLetter.style.backgroundColor = "rgb(191,191,255)";
       }
-      }
-      
-      
+}
+
+
 
 /*====================================================*/
 
 function getChar(keyNum) {
-   return String.fromCharCode(keyNum);
+      return String.fromCharCode(keyNum);
 }
